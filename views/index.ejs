@@ -1,0 +1,66 @@
+<%include partials/header%>
+<h1>Welcome</h1>
+<h1>Big News!</h1>
+<div class="lb">
+	<h1>Leaderboards</h1>
+	<div class="lbWins">
+		<h4>wins</h4>
+	</div>
+	<div class="lbKills">
+		<h4>kills</h4>
+	</div>
+	<div class="lbScore">
+		<h4>score</h4>
+	</div>
+</div>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+<script>
+	compiler("kills");
+	compiler("wins");
+	compiler("score");
+	function compiler(input){
+	var APIkey = {"Authorization": "2e04211c18b48a93110d5ff1f0b06f90"};
+	$.ajax({
+	  			type: "POST",
+	  			url: "https://fortnite-public-api.theapinetwork.com/prod09/leaderboards/get",
+	  			headers: APIkey,
+	  			statsType: "json",
+	  			//Parameter for what stat you're looking for
+	  			data: {"window": "top_10_"+input},
+	  			success: function(stats){
+	  			console.log(stats.entries);
+	  			for(i =0; i<5; i++){
+	  				var values = {};
+	  				values = {
+	  					username: stats["entries"][i]["username"],
+	  					kills: stats["entries"][i]["kills"],
+	  					rank: stats["entries"][i]["rank"],
+	  					platform: stats["entries"][i]["platform"],
+	  					wins: stats["entries"][i]["wins"],
+	  					kd: stats["entries"][i]["kd"],
+	  					score: stats["entries"][i]["score"]
+	  				};
+	  				var lbstats = "<div class='lb-sub'> <h2 class='lb-sub-title'>"+values.username+"</h1> <h3 class='lb-value'>";
+	  				var lbInputstats = values[input]+"</h2> </div>";
+	  				if(input === "kills"){
+	  					$(".lbKills").append(lbstats+lbInputstats);
+	  				} 
+	  				else if(input === "wins"){
+	  					$(".lbWins").append(lbstats+lbInputstats);
+	  				} 
+	  				else if(input === "score"){
+	  					$(".lbScore").append(lbstats+lbInputstats);
+	  				} 
+	  				else {
+	  					console.log("API does not detect that. Try checking the spelling")
+	  				}
+	  			}
+	  			},
+	  			error: function(jqXHR, textStatus, err){console.log(textStatus)}
+	  		})
+	}
+</script>
+<!-- TRN-Api-Key: 47057d16-0959-4122-90a1-f3c27aa93d80 -->

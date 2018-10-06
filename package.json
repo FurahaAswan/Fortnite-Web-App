@@ -1,0 +1,17 @@
+{
+  "name": "fortnitewebapp",
+  "version": "1.0.0",
+  "description": "Just a personal project about a fortnite web application that you can use to track your stats, news, or socialize when you're offline.",
+  "main": "app.js",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Furaha Aswan",
+  "license": "ISC"
+}
