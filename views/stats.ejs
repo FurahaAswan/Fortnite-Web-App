@@ -1,20 +1,77 @@
 <%include partials/header%>
 <h1>Stats</h1>
-<div>
+<div id="ssolo">
 	<h1>Solo</h1>
-	<h2>Kills</h2>
-	<h2>K/D</h2>
-	<h2>Wins</h2>
+	<div class="kills">
+		<h2>Kills</h2>
+	</div>
+	<div class="kd">
+		<h2>K/D</h2>
+	</div>
+	<div class="wins">
+		<h2>Wins</h2>
+	</div>
 </div>
-<div>
+<div id="sduo">
 	<h1>Duo</h1>
-	<h2>Kills</h2>
-	<h2>K/D</h2>
-	<h2>Wins</h2>
+	<div class="kills">
+		<h2>Kills</h2>
+	</div>
+	<div class="kd">
+		<h2>K/D</h2>
+	</div>
+	<div class="wins">
+		<h2>Wins</h2>
+	</div>
 </div>
-<div>
+<div id="ssquad">
 	<h1>Squad</h1>
-	<h2>Kills</h2>
-	<h2>K/D</h2>
-	<h2>Wins</h2>
+	<div class="kills">
+		<h2>Kills</h2>
+	</div>
+	<div class="kd">
+		<h2>K/D</h2>
+	</div>
+	<div class="wins">
+		<h2>Wins</h2>
+	</div>
 </div>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+<script type="text/javascript">
+	var APIkey = {"Authorization": "2e04211c18b48a93110d5ff1f0b06f90"};
+	$.ajax({
+	  				type: "POST",
+	  				url: "https://fortnite-public-api.theapinetwork.com/prod09/users/public/br_stats",
+	  				headers: APIkey,
+	  				dataType: "json",
+	  				data: {user_id: '<%=data["uid"] %>', platform: '<%= data["preference"] %>', "window": "alltime"},
+	  				success: function(data){
+	  					stats("duo");
+	  					stats("solo");
+	  					stats("squad");
+	  					function stats(input){
+		  					values = {
+		  						kills: data.stats["kills_"+input],
+			  					matchesPlayed: data.stats["matchesplayed_"+input],
+			  					winrate: data.stats["winrate_"+input], 
+			  					wins: function(){
+			  						var win = Math.floor(.01*this.winrate * this.matchesPlayed);
+			  						return win;
+			  					},
+			  					kd: data.stats["kd_"+input],
+			  					score:data.stats["score_"+input]
+			  				}
+			  				$("#s"+input+" .kills").append("<p>"+values.kills+"</p>");
+			  				$("#s"+input+" .kd").append("<p>"+values.kd+"</p>");
+			  				$("#s"+input+" .wins").append("<p>"+values.wins()+"</p>");
+	  					}
+	  				},
+	  				error: function(textStatus, errorThrown){
+	  					console.log(errorThrown);
+	  				}
+	  			})
+</script>
+	

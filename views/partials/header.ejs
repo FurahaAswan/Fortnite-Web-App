@@ -2,12 +2,34 @@
 <html>
 	<head>
 		<link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
+		<link href="https://fonts.googleapis.com/css?family=Oswald:400,700" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700" rel="stylesheet">
 		<title>Fortnite Profile</title>
 	</head>
 	<body>
-		<nav>
+		<nav class="header">
+			<div class="branding">FORTNITE</div>
+
+			<form action="/stats" method="POST">
+				<input type="text" placeholder="Username" name="username">
+				<label>PSN</label>
+				<input type="radio" id="platform" name="platform" value="ps4"> 
+				<label>XBOX</label>
+				<input type="radio" id="platform" name="platform" value="xbox"> 
+				<label>PC</label>
+				<input type="radio" id="platform" name="platform" value="pc">
+
+				<button>Submit</button>  
+			</form>
+
+			<div class="right">
+				<h1>Sign Up/Login</h1>
+			</div>
+		</nav>
+		<nav class="navbar">
 			<ul>
-				<li><a href="#">Home</a></li>
+				<li><a href="/">Home</a></li>
 				<li><a href="#">Community</a></li>
 				<li><a href="#">Leaderboard</a></li>
 				<li><a href="#">Log in</a></li>

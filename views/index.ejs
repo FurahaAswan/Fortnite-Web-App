@@ -1,16 +1,16 @@
 <%include partials/header%>
-<h1>Welcome</h1>
-<h1>Big News!</h1>
 <div class="lb">
-	<h1>Leaderboards</h1>
-	<div class="lbWins">
-		<h4>wins</h4>
+	<img src='https://fontmeme.com/permalink/181007/06d6c0204d34475f9fb76db037f2c1ee.png'>
+	<div class="stats">
+	<div class="lbWins lbStat">
+		<h1>wins</h1>		
 	</div>
-	<div class="lbKills">
-		<h4>kills</h4>
+	<div class="lbKills lbStat">
+		<h1>kills</h1>
 	</div>
-	<div class="lbScore">
-		<h4>score</h4>
+	<div class="lbScore lbStat">
+		<h1>score</h1>
+	</div>
 	</div>
 </div>
 <script
@@ -43,8 +43,8 @@
 	  					kd: stats["entries"][i]["kd"],
 	  					score: stats["entries"][i]["score"]
 	  				};
-	  				var lbstats = "<div class='lb-sub'> <h2 class='lb-sub-title'>"+values.username+"</h1> <h3 class='lb-value'>";
-	  				var lbInputstats = values[input]+"</h2> </div>";
+	  				var lbstats = "<div class='lb-sub'> <div class='textBox'><h2>"+values.username+"</h1> <p>";
+	  				var lbInputstats = values[input]+"</p></div> <span><img src='/assets/img/platforms/"+values.platform+".png'></span></div>";
 	  				if(input === "kills"){
 	  					$(".lbKills").append(lbstats+lbInputstats);
 	  				} 
