@@ -35,16 +35,16 @@ app.post("/stats", function(req,res){
 		url: url,
 		form: user
 	}
-	request.post(options, function(error, response, body){
-		console.log(JSON.parse(body));
-		if (typeof body !== 'undefined') {
- 		 	data = JSON.parse(body);
- 		 	data.preference = req.body.platform;
- 		 	res.render("stats", {data: data});
-		} else{
-			res.send("undefined");
-		}
-	});
+	// request.post(options, function(error, response, body){
+	// 	console.log(JSON.parse(body));
+	// 	if (typeof body !== 'undefined') {
+ // 		 	data = JSON.parse(body);
+ // 		 	data.preference = req.body.platform;
+ 		 	res.render("stats");
+// 		} else{
+// 			res.send("undefined");
+// 		}
+// 	});
 });
 
 app.listen(8000, function(){

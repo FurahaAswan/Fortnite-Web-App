@@ -6,6 +6,12 @@
 #333333
 #111111
 */
+
+@font-face{
+	font-family: "Burbank";
+	src: url("/assets/fonts/burbankBigCondensedBlack.ttf");
+}
+
 *{
 	margin: 0;
 }
@@ -17,62 +23,114 @@ body{
 	background-size: cover;
 }
 a{
-	color: #fff;
+	color: inherit;
 	text-decoration: none;
+}
+nav{
+	min-height: 370px;
+	background: url("/assets/img/headerBackground.jpg");
+	min-width: 1024px;
+	
 }
 .navbar{
 	width: 100%;
 	height: 50px;
-	background-color:#242526;
 	font-family: 'Oswald', 'Sans-Serif';
 	font-weight: 700;
+	margin-bottom: 20px;
 }
 .navbar ul{
 	height: inherit;
-	width: 100%;
-	padding: 35px;
+	width: 65%;
+	padding: 5px;
 	display: block;
-	margin: 0 35%;
+	margin: 20px 33%;
+	font-size: 30px;
+	text-align: center;
 } 
 .navbar ul li {
+	color: #fff;
 	height: 100%;
+	min-width: 200px;
     margin: 0 1%;
     margin-top: -28px;
-    padding: 5px;
+    padding: 5px 0;
     float: left;
     list-style: none;
 }
+.navbar ul li a:hover{
+	color: rgba(250,250,250, 0.7);
+}
 .navbar ul li:hover{
-	background-color: #fefefe;
+	color: rgba(250,250,250, 0.7);
+	border-bottom: #fff 4px solid;
 }
 .header{
-	background-color: #484a4c;
 	display: block;
 	width: 100%;
 	height: 70px;
+	overflow: hidden;
+	padding: 20px;
 }
 .header .branding{
-	font-family: 'Oswald', 'Sans-Serif';
-	font-size: 20px;
-	letter-spacing: 4px;
-	margin: 20px 20%;
+	font-family: 'Burbank', 'Sans-Serif';
+	font-size: 50px;
+	margin-left: 300px;
 	margin-right: 10%;
 	display: inline;
 	float: left;
+	background: -webkit-linear-gradient( 270deg, #333 10%, #ba5a16 51%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .header form{
 	display: inline;
 	margin-right: 0;
 }
 .header form input[type="text"]{
-	width: 25%;
-	height: 60%;
+	min-width: 500px;
+	min-height: 50px;
 	margin: 10px;
+	padding: 0 20px;
+	float: left;
+	border: none;
+	background-color: rgba(0,0,0,0.3);
+	color: white;
+	font-family: "Oswald", "sans-serif";
+	font-size: 30px;
+}
+.header form input[type="text"]::placeholder{
+	color: white;
+}
+.header form input[type="radio"]{
+	display: none;	
+}
+.header .radio i{
+	font-size: 30px;
+	color: white;
+}
+.header .radio i:hover{
+}
+.header .radio{
+	width: 40%;
+	height: 100%;
+	float: left;
+	display: flex;
+	justify-content: space-between;
+	padding: 20px;
 }
 .header .right{
 	display: inline;
 	float: right;
-	margin: 20px;
+	margin: 0 20px;
+	width: 30%;
+	height: 100%;
+}
+.header .right h1{
+	float: right;
+}
+.header button{
+	height: 30px;
 }
 .lb{
 	background-color: #2e2e30;
@@ -81,7 +139,6 @@ a{
 	width: 45%;
 	height: 550px;
 	display: block;
-	position: absolute;
 	overflow: hidden;
 	font-family: 'Lato', sans-serif;
 	box-shadow: 0px 8px 26px -2px rgba(0,0,0,0.7);
@@ -109,14 +166,14 @@ a{
 	box-shadow: 0px 8px 26px -2px rgba(0,0,0,0.7);
 }
 .lbStat h1{
-	margin: 0px 0px 8px 0px;
+	margin: 0px -1px 8px -1px;
 	padding: 5px;
-	background: linear-gradient(141deg, #1098ce 0%, #1fc8db 51%) no-repeat center center fixed;
-	font-size: 30px;
+	background: linear-gradient(141deg, #1098ce 0%, #1fc8db 51%);
+	font-size: 40px;
 	text-align: center;
 	text-transform: uppercase;
 	color: #fefefe;
-	font-family: 'Roboto Slab', sans-serif;
+	font-family: 'Burbank', sans-serif;
 	box-shadow: 0px 0px 26px 0px rgba(0,0,0,0.4);
 }
 .lb-sub{
@@ -132,7 +189,8 @@ a{
     font-weight: 700;
 }
 .lb-sub p{
-	font-size: 18px;
+	font-family: "Burbank", "sans-serif";
+	font-size: 30px;
 }
 .lb-sub .textBox{
 	width: 70%;
@@ -142,3 +200,5 @@ a{
     margin: 20px 0px;
     margin-right: 30px;
 }
+
+

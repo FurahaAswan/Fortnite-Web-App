@@ -5,35 +5,38 @@
 		<link href="https://fonts.googleapis.com/css?family=Oswald:400,700" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700" rel="stylesheet">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 		<title>Fortnite Profile</title>
 	</head>
 	<body>
-		<nav class="header">
+		<nav>
+		<div class="header">
 			<div class="branding">FORTNITE</div>
 
 			<form action="/stats" method="POST">
-				<input type="text" placeholder="Username" name="username">
-				<label>PSN</label>
-				<input type="radio" id="platform" name="platform" value="ps4"> 
-				<label>XBOX</label>
-				<input type="radio" id="platform" name="platform" value="xbox"> 
-				<label>PC</label>
-				<input type="radio" id="platform" name="platform" value="pc">
-
-				<button>Submit</button>  
-			</form>
+			<input type="text" placeholder="Username" name="username">
 
 			<div class="right">
-				<h1>Sign Up/Login</h1>
+				<div class="radio">
+				<i class="fab fa-playstation"></i>
+				<input type="radio" id="platform" name="platform" value="ps4"> 
+				<i class="fab fa-xbox"></i>
+				<input type="radio" id="platform" name="platform" value="xbox"> 
+				<i class="fab fa-windows"></i>
+				<input type="radio" id="platform" name="platform" value="pc" id="pc">
+				<button>Submit</button>  
+				</div>
+				<!-- <h1>Sign Up/Login</h1> -->
 			</div>
-		</nav>
-		<nav class="navbar">
+
+			</form>
+		</div>
+		<div class="navbar">
 			<ul>
 				<li><a href="/">Home</a></li>
 				<li><a href="#">Community</a></li>
-				<li><a href="#">Leaderboard</a></li>
-				<li><a href="#">Log in</a></li>
-				<li><a href="#">Sign Up</a></li>
+				<li><a href="#">Statistics</a></li>
 			</ul>
+		</div>
 		</nav>
 		
