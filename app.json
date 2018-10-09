@@ -1,0 +1,5 @@
+{
+	"name": "fortniteWebApp",
+	"keywords": ["node", "express", "static"],
+	"description": "Just a personal project about a fortnite web application that you can use to track your stats, news, or socialize when you're offline."
+}

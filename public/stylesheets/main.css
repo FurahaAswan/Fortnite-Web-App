@@ -17,10 +17,6 @@
 }
 body{
     background: #575859;
-	-webkit-background-size: cover;
-  	-moz-background-size: cover;
-  	-o-background-size: cover;
-	background-size: cover;
 }
 a{
 	color: inherit;
@@ -30,14 +26,27 @@ nav{
 	min-height: 370px;
 	background: url("/assets/img/headerBackground.jpg");
 	min-width: 1024px;
-	
+	margin-bottom: 20px;	
+}
+.container{
+	padding: 50px;
+	display: flex;
+	justify-content: space-between;
+}
+.big{
+	width: 60%;
+}
+.left{
+	float: left;
+}
+.right{
+	float: right;
 }
 .navbar{
 	width: 100%;
 	height: 50px;
 	font-family: 'Oswald', 'Sans-Serif';
 	font-weight: 700;
-	margin-bottom: 20px;
 }
 .navbar ul{
 	height: inherit;
@@ -83,15 +92,11 @@ nav{
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.header form{
-	display: inline;
-	margin-right: 0;
-}
 .header form input[type="text"]{
 	min-width: 500px;
 	min-height: 50px;
 	margin: 10px;
-	padding: 0 20px;
+	padding: 0 35px;
 	float: left;
 	border: none;
 	background-color: rgba(0,0,0,0.3);
@@ -101,6 +106,9 @@ nav{
 }
 .header form input[type="text"]::placeholder{
 	color: white;
+}
+.header form input[type="text"]:autofill{
+	background-color: blue;
 }
 .header form input[type="radio"]{
 	display: none;	
@@ -118,6 +126,7 @@ nav{
 	display: flex;
 	justify-content: space-between;
 	padding: 20px;
+	padding-left: 0;
 }
 .header .right{
 	display: inline;
@@ -132,19 +141,61 @@ nav{
 .header button{
 	height: 30px;
 }
+.textBox{
+	margin: 30px;
+	font-family: "Oswald", "sans-serif";
+}
+.jumbotron{
+	height: 400px;
+/*	background-image: url("https://fortnite-public-files.theapinetwork.com/0b76799d416020eedcbe611364d2ee09.jpeg");*/
+	background-repeat: no-repeat;
+	background-position: center;
+	position: relative;
+	margin: 0 auto;
+}
+.jumbotron .description{
+    width: 1024px;
+    background-color: rgba(0,0,0,0.4);
+    height: 148px;
+    text-align: center;
+    left: 439.5px;
+    position: absolute;
+    bottom: 0;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 38%;
+  padding: 15px;
+  cursor: pointer;
+  width: auto;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+.prev {
+  left: 0;
+  border-radius: 3px 0 0 3px;
+}
+
 .lb{
 	background-color: #2e2e30;
-	margin: 50px;
-	float: right;
+	min-width: 200px;
 	width: 45%;
-	height: 550px;
+	height: 650px;
 	display: block;
 	overflow: hidden;
 	font-family: 'Lato', sans-serif;
 	box-shadow: 0px 8px 26px -2px rgba(0,0,0,0.7);
 }
 .lb img{
-	text-align: center;
 	color: white;
 	position: relative;
     left: 50%;
@@ -166,6 +217,7 @@ nav{
 	box-shadow: 0px 8px 26px -2px rgba(0,0,0,0.7);
 }
 .lbStat h1{
+	display: block;
 	margin: 0px -1px 8px -1px;
 	padding: 5px;
 	background: linear-gradient(141deg, #1098ce 0%, #1fc8db 51%);
@@ -182,11 +234,14 @@ nav{
   	justify-content: space-between;
 }
 .lb-sub h2{
+	padding: 3px;
+	background: linear-gradient(141deg, #333 0%, #777675 51%);
 	font-size: 22px;
 	text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
     font-weight: 700;
+    color: white;
 }
 .lb-sub p{
 	font-family: "Burbank", "sans-serif";
@@ -201,4 +256,83 @@ nav{
     margin-right: 30px;
 }
 
+.video{
+	height: 650px;
+	width: 950px;
+}
+
+.video .title{
+	display: inline-block;
+	color: white;
+	font-family: "Burbank", "sans-serif";
+	text-align: center;
+	font-size: 50px;
+	background-color: #2e2e30;
+	box-shadow: 0px 8px 26px -2px rgba(0,0,0,0.4);
+	padding: 10px;
+	position: relative;
+	top: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 45px;
+}
+
+video{
+	max-width: 850px;
+	margin: 0 auto;
+}
+.videoInfo{
+	background-color: #2e2e30;
+	margin: 20px 30px;
+	border: 10px solid  #2e2e30;
+	overflow: auto;	
+}
+.video .textBox{
+	margin: 0;
+}
+.textBox h1{
+	font-size: 40px;
+	color: white;
+	text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.textBox p{
+	font-size: 20px;
+	color: white;
+}
+.forceOverflow {
+	max-height: 529px;
+	overflow-y: scroll;
+}
+.forceOverflow::-webkit-scrollbar-track {
+	padding: 2px 0;
+	background-color: #404040;
+}
+.forceOverflow::-webkit-scrollbar {
+	width: 10px;
+}
+.forceOverflow::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #737272;
+	border: 1px solid #000;
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
 
