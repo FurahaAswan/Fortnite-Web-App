@@ -71,6 +71,6 @@ app.get('/video', function(req, res) {
 })
 
 
-app.listen(8000, function(){
+app.listen(app.get("port"), function(){
 	console.log("the app is running");
 });
