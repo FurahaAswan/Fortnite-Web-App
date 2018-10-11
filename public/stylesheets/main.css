@@ -23,8 +23,8 @@ a{
 	text-decoration: none;
 }
 nav{
-	min-height: 370px;
-	background: url("/assets/img/headerBackground.jpg");
+	min-height: 180px;
+	background: #222;
 	min-width: 1024px;
 	margin-bottom: 20px;	
 }
@@ -142,8 +142,10 @@ nav{
 	height: 30px;
 }
 .textBox{
-	margin: 30px;
 	font-family: "Oswald", "sans-serif";
+}
+.jumbotron .textBox{
+	margin: 30px;
 }
 .jumbotron{
 	height: 400px;
@@ -187,13 +189,15 @@ nav{
 
 .lb{
 	background-color: #2e2e30;
-	min-width: 200px;
-	width: 45%;
-	height: 650px;
 	display: block;
 	overflow: hidden;
 	font-family: 'Lato', sans-serif;
 	box-shadow: 0px 8px 26px -2px rgba(0,0,0,0.7);
+}
+#index .lb{
+	min-width: 200px;
+	width: 45%;
+	height: 650px;
 }
 .lb img{
 	color: white;
@@ -243,9 +247,10 @@ nav{
     font-weight: 700;
     color: white;
 }
-.lb-sub p{
+.lb-sub .textBox p{
 	font-family: "Burbank", "sans-serif";
 	font-size: 30px;
+	color: black;
 }
 .lb-sub .textBox{
 	width: 70%;

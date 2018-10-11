@@ -16,24 +16,28 @@ app.get("/", function(req,res){
 });
 
 app.post("/stats", function(req,res){
-	console.log(req.body.username);
-	var url = "https://fortnite-public-api.theapinetwork.com/prod09/users/id";
-	var user = {"username": req.body.username};
-	var options = {
-		headers: apiKey,
-		url: url,
-		form: user
-	}
-	request.post(options, function(error, response, body){
-		console.log(JSON.parse(body));
-		if (typeof body !== 'undefined') {
- 		 	data = JSON.parse(body);
- 		 	data.preference = req.body.platform;
- 		 	res.render("stats");
-		} else{
-			res.send("undefined");
-		}
-	});
+	// console.log(req.body.username);
+	// var url = "https://fortnite-public-api.theapinetwork.com/prod09/users/id";
+	// var user = {"username": req.body.username};
+	// var options = {
+	// 	headers: apiKey,
+	// 	url: url,
+	// 	form: user
+	// }
+	// request.post(options, function(error, response, body){
+	// 	console.log(JSON.parse(body));
+	// 	if (typeof body !== 'undefined') {
+ // 		 	data = JSON.parse(body);
+ // 		 	data.preference = req.body.platform;
+ // 		 	res.render("stats");
+	// 	} else{
+	// 		res.send("undefined");
+	// 	}
+	// });
+});
+
+app.get("/stats", function(req,res){
+  res.render("stats");
 });
 
 app.get('/video', function(req, res) {
@@ -70,6 +74,9 @@ app.get('/video', function(req, res) {
   }
 })
 
+app.use(function(req, res) {
+    res.status(404).end('error');
+});
 
 app.listen(app.get("port"), function(){
 	console.log("the app is running on port" +app.get("port"));
