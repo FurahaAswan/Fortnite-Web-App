@@ -1,0 +1,79 @@
+<%include ../partials/header%>
+        <div class="jumbotron">
+            <img class="background" src="https://fortnite-public-files.theapinetwork.com/059f6fe57a11ff0f60de9d3638bcd3cb.jpeg">
+            <div class="description" style="background: url('https://fortnite-public-files.theapinetwork.com/059f6fe57a11ff0f60de9d3638bcd3cb.jpeg')">
+            <div class="textBox">
+                <h1>Heavy AR</h1>
+                <p>Powerful Assault Rifle that is most useful when fired in short bursts.</p>
+                <a class="prev">&#10094;</a>
+                <a class="next">&#10095;</a> 
+            </div>
+            </div>
+        </div>
+        <div class="lb">
+            <h1>Top 3</h1>
+            <div class="stats">
+                <div class="lbStat" id="Kills">
+                    <h1>kills</h1>
+                    <%leaderboards.kills.forEach(function(x,n){%>
+                    <div class='lb-sub'>
+                        <div class='textBox'>
+                            <h2><%=x.data.username%></h2>
+                            <p>K <%=x.data.kills%></p>
+                        </div>
+                    </div>
+                    <%})%>
+                </div>
+                <div class="lbStat" id="Wins">
+                    <h1>wins</h1>
+                    <%leaderboards.wins.forEach(function(x,n){%>
+                    <div class='lb-sub'>
+                        <div class='textBox'>
+                            <h2><%=x.data.username%></h2>
+                            <p>W <%=x.data.wins%></p>
+                        </div>
+                    </div>
+                    <%})%>
+                </div>
+                <div class="lbStat" id="Score">
+                    <h1>score</h1>
+                    <%leaderboards.score.forEach(function(x,n){%>
+                    <div class='lb-sub'>
+                        <div class='textBox'>
+                            <h2><%=x.data.username%></h2>
+                            <p>S <%=x.data.score%></p>
+                        </div>
+                    </div>
+                    <%})%>
+                </div>
+            </div>
+        </div>
+<!--
+        <div class="v-container">
+            <h1>Trending Clips</h1>
+            <div class="c-video">
+            <video class="video"src="/assets/videos/sample.mp4" type="video/mp4"></video>
+            <div class="controls">
+                <div class="play-bar">
+                    <div class="play-status"></div>
+                </div>
+                <div class="buttons">
+                    <button id="play pause"><img src="/assets/img/icons/play.png" width="30px" height= "30px"></button>
+                </div>
+            </div>
+            </div>
+        </div>
+-->
+        <div class="item-shop"></div>
+        </div>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+<script src="/scripts/auth.js"></script>
+<script src="/scripts/leaderboards.js"></script>
+<script src="/scripts/news1.js"></script>
+<script src="/scripts/index.js"></script>
+<!-- TRN-Api-Key: 47057d16-0959-4122-90a1-f3c27aa93d80 -->

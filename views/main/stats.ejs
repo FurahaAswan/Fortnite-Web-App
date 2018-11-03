@@ -1,0 +1,64 @@
+<%include ../partials/header%>
+<div class="container" id="stats">
+	<h1 class="title">Statistics</h1>
+    <%if(error){%>
+	   <p>You shal not pass</p>
+    <%} else{%>
+    <h1><%=data.username%></h1>
+    <div class="lb">
+		<div class="stats">
+			<div class="ssolo lbStat">
+				<h1>Solo</h1>
+				<div id="kills">
+					<h2>Kills</h2>
+					<p><%=data.stats.kills_solo%></p>
+				</div>
+				<div id="kd">
+					<h2>K/D</h2>
+					<p><%=data.stats.kd_solo%></p>
+				</div>
+				<div id="wins">
+					<h2>Wins</h2>
+                    <p><%=Math.floor(data.stats.matchesplayed_solo * data.stats.winrate_solo * .01)%></p>
+				</div>
+			</div>
+			<div class="sduo lbStat">
+				<h1>Duo</h1>
+				<div class="kills">
+					<h2>Kills</h2>
+                    <p><%=data.stats.kills_duo%></p>
+				</div>
+				<div class="kd">
+					<h2>K/D</h2>
+                    <p><%=data.stats.kd_duo%></p>
+				</div>
+				<div class="wins">
+					<h2>Wins</h2>
+                    <p><%=Math.floor(data.stats.matchesplayed_duo * data.stats.winrate_duo * .01)%></p>
+				</div>
+			</div>
+			<div class="ssquad lbStat">
+				<h1>Squad</h1>
+				<div class="kills">
+					<h2>Kills</h2>
+                    <p><%=data.stats.kills_squad%></p>
+				</div>
+				<div class="kd">
+					<h2>K/D</h2>
+                    <p><%=data.stats.kd_squad%></p>
+				</div>
+				<div class="wins">
+					<h2>Wins</h2>
+                    <p><%=Math.floor(data.stats.matchesplayed_squad * data.stats.winrate_squad * .01)%></p>
+				</div>
+			</div>
+		</div>
+	</div>
+    <%}%>
+</div>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+	
